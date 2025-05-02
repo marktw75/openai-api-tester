@@ -1,0 +1,44 @@
+{
+  "info": {
+    "_postman_id": "d4be5e91-2e52-4df4-8437-aaa123456789",
+    "name": "OpenAI GPT Chat Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "ChatGPT - gpt-3.5-turbo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{OPENAI_API_KEY}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"gpt-3.5-turbo\",\n  \"messages\": [\n    {\"role\": \"user\", \"content\": \"Hello! What can you do for me?\"}\n  ]\n}"
+        },
+        "url": {
+          "raw": "https://api.openai.com/v1/chat/completions",
+          "protocol": "https",
+          "host": ["api", "openai", "com"],
+          "path": ["v1", "chat", "completions"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "OPENAI_API_KEY",
+      "value": "sk-你的API金鑰"
+    }
+  ]
+}
